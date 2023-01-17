@@ -18,6 +18,8 @@ import java.io.IOException;
 public class MovController {
 
     final FileChooser fileChooser = new FileChooser();
+    private FileChooser.ExtensionFilter mp4Filter = new FileChooser.ExtensionFilter("mp4 files (*.mp4)", "*.mp4");
+    private FileChooser.ExtensionFilter imgFilter = new FileChooser.ExtensionFilter("img files (*.jpg)", "*.png", "*.jpg", "*.jpeg");
     @FXML
     private BorderPane borderPane;
 
@@ -63,6 +65,8 @@ public class MovController {
     void chooseFile(ActionEvent event) {
         try
         {
+            fileChooser.getExtensionFilters().clear();
+            fileChooser.getExtensionFilters().add(imgFilter);
             Stage stage = (Stage) borderPane.getScene().getWindow();
             File file = fileChooser.showOpenDialog(stage);
             imgText.setText(file.getName());
@@ -79,6 +83,8 @@ public class MovController {
     void chooseMp4(ActionEvent event) {
         try
         {
+            fileChooser.getExtensionFilters().clear();
+            fileChooser.getExtensionFilters().add(mp4Filter);
             Stage stage = (Stage) borderPane.getScene().getWindow();
             File file = fileChooser.showOpenDialog(stage);
             linkText.setText(file.getName());
