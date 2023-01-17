@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+
+<DialogPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.filmficionados.controller.AfspillerController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="32.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#playPauseMedia" style="-fx-background-color: TRANSPARENT;">
+                     <graphic>
+                        <ImageView fx:id="playPauseBillede" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image fx:id="play" url="@../Img/play.png" />
+                              <Image fx:id="pause" url="@../Img/pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#lydKnapKlik" style="-fx-background-color: TRANSPARENT;">
+                           <graphic>
+                              <ImageView fx:id="lydBillede" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image fx:id="audio" url="@../Img/audio.png" />
+                                    <Image fx:id="mute" url="@../Img/mute.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Slider fx:id="volumeSlider" blockIncrement="5.0" value="30.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <center>
+            <Pane prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MediaView fx:id="filmView" fitHeight="300.0" fitWidth="500.0" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </content>
+</DialogPane>
