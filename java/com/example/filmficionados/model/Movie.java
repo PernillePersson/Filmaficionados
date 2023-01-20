@@ -20,7 +20,6 @@ public class Movie {
     private SimpleStringProperty img;
 
     private List<Favorite> yndling = new ArrayList<Favorite>();
-    private List<Actor> skuespiller = new ArrayList<Actor>();
 
 
 
@@ -39,7 +38,8 @@ public class Movie {
     public String toString(){
         return getTitle();
     }
-    // Derskal være get-metoder for at tableview kan hente data
+
+    // Der skal være get-metoder for at tableview kan hente data
     public String getId() {
         return id.get();
     }
@@ -56,14 +56,6 @@ public class Movie {
         return resume.get();
     }
 
-    public String getIMDbRating() {
-        return IMDbRating.get();
-    }
-
-    public String getMyRating() {
-        return myRating.get();
-    }
-
     public String getFileLink() {
         return fileLink.get();
     }
@@ -76,12 +68,16 @@ public class Movie {
         return img.get();
     }
 
-    public void makeFav(Favorite f){
-        yndling.add(f);
+    public String getIMDbRating() {
+        return IMDbRating.get();
     }
 
-    public void removeFav(){
-        yndling.clear();
+    public String getMyRating() {
+        return myRating.get();
+    }
+
+    public void makeFav(Favorite f){
+        yndling.add(f);
     }
 
     public List<Favorite> getYndling() {

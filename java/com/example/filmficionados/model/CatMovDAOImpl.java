@@ -1,12 +1,12 @@
 package com.example.filmficionados.model;
 
-import com.example.filmficionados.controller.FilmController;
+import com.example.filmficionados.dao.CatMovDAO;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CatMovDAOImpl implements CatMovDAO{
+public class CatMovDAOImpl implements CatMovDAO {
     private Connection con; // forbindelsen til databasen
 
     public CatMovDAOImpl(){

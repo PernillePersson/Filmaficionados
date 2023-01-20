@@ -1,10 +1,12 @@
 package com.example.filmficionados.model;
 
+import com.example.filmficionados.dao.CategoryDAO;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDAOImpl implements CategoryDAO{
+public class CategoryDAOImpl implements CategoryDAO {
     private Connection con; // forbindelsen til databasen
 
     public CategoryDAOImpl(){

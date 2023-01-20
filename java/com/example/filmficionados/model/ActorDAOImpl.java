@@ -1,11 +1,13 @@
 package com.example.filmficionados.model;
 
+import com.example.filmficionados.dao.ActorDAO;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ActorDAOImpl implements ActorDAO{
+public class ActorDAOImpl implements ActorDAO {
 
     private Connection con; // forbindelsen til databasen
     public ActorDAOImpl(){

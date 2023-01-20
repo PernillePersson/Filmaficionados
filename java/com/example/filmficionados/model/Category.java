@@ -20,7 +20,6 @@ public class Category {
         return id.get();
     }
 
-
     public String getTitle() {
         return title.get();
     }
