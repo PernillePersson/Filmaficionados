@@ -1,12 +1,13 @@
 package com.example.filmficionados.controller;
 
+import com.example.filmficionados.dao.ActMovDAO;
+import com.example.filmficionados.dao.ActorDAO;
 import com.example.filmficionados.model.*;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 import java.util.List;
 

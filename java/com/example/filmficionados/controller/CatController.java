@@ -10,8 +10,6 @@ public class CatController {
     @FXML
     public BorderPane catPane;
     @FXML
-    private DialogPane categoryPane;
-    @FXML
     private TextField catTitleText;
 
     public String nyKategori(){

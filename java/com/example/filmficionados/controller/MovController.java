@@ -18,13 +18,10 @@ import java.io.IOException;
 public class MovController {
 
     final FileChooser fileChooser = new FileChooser();
-    private FileChooser.ExtensionFilter mp4Filter = new FileChooser.ExtensionFilter("mp4 files (*.mp4)", "*.mp4");
+    private FileChooser.ExtensionFilter mp4Filter = new FileChooser.ExtensionFilter("mp4 files (*.mp4)", "*.mp4", "*.mpeg4");
     private FileChooser.ExtensionFilter imgFilter = new FileChooser.ExtensionFilter("img files (*.jpg)", "*.png", "*.jpg", "*.jpeg");
     @FXML
     private BorderPane borderPane;
-
-    @FXML
-    private DialogPane moviePane;
 
     @FXML
     private TextField IMDbText, directorText, linkText, ratingText, titleText, imgText;
@@ -65,17 +62,18 @@ public class MovController {
     void chooseFile(ActionEvent event) {
         try
         {
-            fileChooser.getExtensionFilters().clear();
-            fileChooser.getExtensionFilters().add(imgFilter);
+            fileChooser.getExtensionFilters().clear(); //Da der kan være mp4Filter på allerede, skal den cleares
+            fileChooser.getExtensionFilters().add(imgFilter); //Sætter filter på, så der kun kan vælges billedefiler
             Stage stage = (Stage) borderPane.getScene().getWindow();
             File file = fileChooser.showOpenDialog(stage);
             imgText.setText(file.getName());
-            file.renameTo(new File("/Users/pernillepersson/IdeaProjects/Filmficionados/src/main/resources/com/example/filmficionados/Img/" + file.getName()));
+            file.renameTo(new File("/Users/pernillepersson/IdeaProjects/Filmficionados/" +
+                    "src/main/resources/com/example/filmficionados/Img/" + file.getName())); //Navngiver filen, så den bliver flytttet til korrekt mappe
         }
 
         //Laver en catch til hvis billedets fil ikke kunne findes
         catch (Exception ex) {
-            System.err.println("Vælg fil " + ex.getMessage());
+            System.err.println("Vælg fil - " + ex.getMessage());
         }
     }
 
@@ -88,12 +86,13 @@ public class MovController {
             Stage stage = (Stage) borderPane.getScene().getWindow();
             File file = fileChooser.showOpenDialog(stage);
             linkText.setText(file.getName());
-            file.renameTo(new File("/Users/pernillepersson/IdeaProjects/Filmficionados/src/main/resources/com/example/filmficionados/mp4/" + file.getName()));
+            file.renameTo(new File("/Users/pernillepersson/IdeaProjects/Filmficionados/" +
+                    "src/main/resources/com/example/filmficionados/mp4/" + file.getName()));
         }
 
-        //Laver en catch til hvis billedets fil ikke kunne findes
+        //Laver en catch til hvis mp4-filen ikke kunne findes
         catch (Exception ex) {
-            System.err.println("Vælg fil " + ex.getMessage());
+            System.err.println("Vælg fil - " + ex.getMessage());
         }
     }
 
