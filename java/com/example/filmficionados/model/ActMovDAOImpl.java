@@ -1,10 +1,12 @@
 package com.example.filmficionados.model;
 
+import com.example.filmficionados.dao.ActMovDAO;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActMovDAOImpl implements ActMovDAO{
+public class ActMovDAOImpl implements ActMovDAO {
 
     private Connection con; // forbindelsen til databasen
 
@@ -24,7 +26,7 @@ public class ActMovDAOImpl implements ActMovDAO{
         List<Actor> actorInMov = new ArrayList<>();
 
         try {
-            PreparedStatement ps = con.prepareStatement("select * from Actor, Movie, ActMovie where Movie.movieID = ActMovie.movieID AND ActMovie.actorID = Actor.actorID AND Movie.movieID = ?");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM Actor, Movie, ActMovie WHERE Movie.movieID = ActMovie.movieID AND ActMovie.actorID = Actor.actorID AND Movie.movieID = ?");
             ps.setInt(1, Integer.parseInt(f.getId()));
             ResultSet rs = ps.executeQuery();
             Actor act;
