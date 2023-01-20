@@ -75,7 +75,7 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#seTrailer" style="-fx-background-color: #00bbf9;" text="Watch Trailer">
+                        <Button mnemonicParsing="false" onAction="#seTrailer" style="-fx-background-color: #00bbf9;" text="Watch Trailer" textFill="#f5f5f5">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -91,7 +91,12 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="oldMovList" onMouseClicked="#oldMovClick" prefHeight="200.0">
+                  <Label text="Do you wanna remove from library?">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="oldMovList" prefHeight="200.0">
                      <contextMenu>
                         <ContextMenu>
                           <items>
@@ -179,7 +184,7 @@
                </contextMenu></ListView>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#tilføjKategori" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#tilføjKategori" style="-fx-background-color: TRANSPARENT;" text="Add" textFill="#00bbf9" />
                </children>
             </HBox>
          </children>
@@ -208,7 +213,7 @@
             </ListView>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#tilføjFilm" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#tilføjFilm" style="-fx-background-color: TRANPARENT;" text="Add" textFill="#00bbf9" />
                </children>
             </HBox>
          </children>
